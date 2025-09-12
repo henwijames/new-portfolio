@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Particles from "@/components/particles";
+import { ModeToggle } from "@/components/mode-toggle";
+import { use } from "react";
+import { useTheme } from "next-themes";
+import ParticlesBackground from "@/components/particles-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen max-w-2xl mx-auto py-12 sm:py-24 px-6`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <ThemeProvider
           attribute="class"
@@ -34,7 +39,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ParticlesBackground />
+          <ModeToggle />
+          <div className="max-w-2xl mx-auto px-4 py-8 ">{children}</div>
         </ThemeProvider>
       </body>
     </html>
