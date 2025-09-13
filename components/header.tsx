@@ -8,7 +8,7 @@ export default function Header() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="flex items-center gap-4 md:gap-6"
+      className="flex items-center gap-4 md:gap-6 mb-4"
     >
       <HeaderDescription
         name="Henry"

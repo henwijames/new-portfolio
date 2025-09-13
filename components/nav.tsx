@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
+import { AnimatedThemeToggler } from "./magicui/animated-theme-toggler";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -64,7 +65,7 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
+    { href: "/", icon: HomeIcon, label: "Home" },
     { href: "#", icon: PencilIcon, label: "Blog" },
   ],
   contact: {
@@ -97,7 +98,7 @@ export function Nav() {
   return (
     <div className="fixed w-full bottom-5 flex justify-center bg-gradient-to-b from-black to-gray-300/80 dark:from-white dark:to-slate-900/10 bg-clip-text">
       <TooltipProvider>
-        <Dock direction="middle">
+        <Dock className="rounded-lg" direction="middle">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -144,8 +145,8 @@ export function Nav() {
           <Separator orientation="vertical" className="h-full py-2" />
           <DockIcon>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <ModeToggle className="size-12 rounded-full" />
+              <TooltipTrigger asChild className="flex items-center">
+                <AnimatedThemeToggler className="cursor-pointer" />
               </TooltipTrigger>
               <TooltipContent>
                 <p>Theme</p>
