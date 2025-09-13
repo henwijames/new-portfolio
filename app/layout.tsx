@@ -4,9 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Particles from "@/components/particles";
 import { ModeToggle } from "@/components/mode-toggle";
-import { use } from "react";
-import { useTheme } from "next-themes";
 import ParticlesBackground from "@/components/particles-background";
+import { Nav } from "@/components/nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,8 +39,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ParticlesBackground />
-          <ModeToggle />
           <div className="max-w-2xl mx-auto px-4 py-8 ">{children}</div>
+          <Nav />
         </ThemeProvider>
       </body>
     </html>
