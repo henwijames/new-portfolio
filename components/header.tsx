@@ -10,11 +10,11 @@ export default function Header() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="flex items-center gap-4 md:gap-6 mb-4"
     >
-      <HeaderDescription
-        name="Henry"
-        description="A passionate web developer crafting beautiful and functional digital experiences."
-      />
       <ProfilePicture />
+      <HeaderDescription
+        name="Henry James Ribano"
+        address="Ajman, United Arab Emirates"
+      />
     </motion.section>
   );
 }

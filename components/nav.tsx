@@ -64,30 +64,22 @@ const Icons = {
 };
 
 const DATA = {
-  navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
-  ],
+  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: "https://github.com/henwijames",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/henry-james-ribano",
         icon: Icons.linkedin,
-      },
-      X: {
-        name: "X",
-        url: "#",
-        icon: Icons.x,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:henryjamesribano27@gmail.com",
         icon: Icons.email,
       },
     },
@@ -108,8 +100,9 @@ export function Nav() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full",
                     )}
+                    target="_blank"
                   >
                     <item.icon className="size-4" />
                   </Link>
@@ -130,8 +123,9 @@ export function Nav() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full "
+                      "size-12 rounded-full ",
                     )}
+                    target="_blank"
                   >
                     <social.icon className="size-4" />
                   </Link>
