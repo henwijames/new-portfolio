@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 
@@ -28,18 +30,16 @@ export default function Experience({ className }: { className?: string }) {
       transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
       className={className}
     >
-      <Card>
+      <Card className="h-full">
         <CardHeader>
           <CardTitle className="text-lg font-bold">Experience</CardTitle>
         </CardHeader>
         <CardContent className="p-0">
-          <div className="relative space-y-4">
-            {/* Vertical Line */}
-            <div className="absolute left-1.5 top-1.5 bottom-2 w-px bg-border"></div>
+          <div className="relative space-y-5">
+            <div className="absolute bottom-2 left-1.5 top-1.5 w-px bg-border"></div>
 
             {TIMELINE_DATA.map((item, index) => (
               <div key={index} className="relative pl-6 group/role">
-                {/* Timeline Dot */}
                 <div
                   className={`absolute left-0 top-1.5 w-3 h-3 rounded-full border-2 transition-colors ${
                     item.isLatest
@@ -48,9 +48,8 @@ export default function Experience({ className }: { className?: string }) {
                   }`}
                 ></div>
 
-                {/* Content */}
-                <div className="space-y-1">
-                  <h3 className={`text-sm font-semibold transition-colors `}>
+                <div className="space-y-1.5 rounded-xl border border-transparent p-3 transition-colors group-hover/role:border-border/70 group-hover/role:bg-foreground/[0.02]">
+                  <h3 className="text-sm font-semibold transition-colors">
                     {item.title}
                   </h3>
                   <div className="flex items-center justify-between">

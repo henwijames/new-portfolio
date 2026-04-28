@@ -1,3 +1,5 @@
+"use client";
+
 import Me from "@/public/assets/images/me.png";
 import MeHover from "@/public/assets/images/me2.jpeg";
 import Image from "next/image";
@@ -8,24 +10,22 @@ export default function ProfilePicture() {
 
   return (
     <div
-      className="w-40 h-40 md:w-40 md:h-40 mb-4"
+      className="h-28 w-28 shrink-0 sm:h-32 sm:w-32 md:h-36 md:w-36"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative w-full h-full overflow-hidden rounded-lg">
-        {/* Default Image */}
+      <div className="relative h-full w-full overflow-hidden rounded-2xl border border-border/70 bg-muted/40 shadow-sm">
         <Image
           src={Me}
           alt="Profile Picture"
-          className="object-cover w-full h-full"
+          className="h-full w-full object-cover"
           priority
         />
 
-        {/* Hover Image */}
         <Image
           src={MeHover}
           alt="Profile Picture Hover"
-          className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-300 ${
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
             isHovered ? "opacity-100 cursor-pointer" : "opacity-0"
           }`}
         />

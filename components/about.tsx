@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
@@ -14,7 +16,7 @@ export default function About({ className }: AboutProps) {
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
         className={className}
       >
-        <Card>
+        <Card className="h-full">
           <CardContent>
             <CardHeader>
               <CardTitle className="text-lg font-bold">About</CardTitle>

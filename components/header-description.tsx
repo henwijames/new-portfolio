@@ -7,10 +7,10 @@ type HeaderDescriptionProps = {
 
 export default function HeaderDescription(props: HeaderDescriptionProps) {
   return (
-    <div className="header flex-1 min-w-0 space-y-2">
+    <div className="header min-w-0 flex-1 space-y-2">
       <BlurFade delay={0.25} inView>
         <div className="flex items-center gap-2">
-          <h1 className="text-lg md:text-2xl font-bold truncate">
+          <h1 className="truncate text-xl font-bold md:text-2xl">
             {props.name}
           </h1>
           <svg
@@ -25,9 +25,9 @@ export default function HeaderDescription(props: HeaderDescriptionProps) {
             ></path>
           </svg>
         </div>
-        <p className="text-xs md:text-sm text-foreground/70 mt-0.5 flex items-center gap-1">
+        <p className="mt-0.5 flex items-center gap-1 text-xs text-foreground/70 md:text-sm">
           <svg
-            className="w-3 h-3 md:w-3.5 md:h-3.5 flex-shrink-0"
+            className="h-3 w-3 flex-shrink-0 md:h-3.5 md:w-3.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ export default function HeaderDescription(props: HeaderDescriptionProps) {
           </svg>
           <span className="truncate">{props.address}</span>
         </p>
-        <div className="flex items-center justify-between mt-1.5 md:mt-2">
+        <div className="mt-1.5 flex items-center justify-between md:mt-2">
           <p className="text-[10px] md:text-base">
             IT Support <span className="text-gray-400">\</span> Software
             Engineer{" "}

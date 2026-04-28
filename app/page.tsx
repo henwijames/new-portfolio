@@ -1,23 +1,17 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import Header from "@/components/header";
 import About from "@/components/about";
 import Experience from "@/components/experience";
+import Projects from "@/components/projects";
 import TechStack from "@/components/tech-stack";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <div className="grid w-full grid-cols-1 md:grid-cols-6 gap-2">
-        <About className="col-span-1 md:col-span-6 space-y-2" />
-        <Experience className="col-span-1 md:col-span-2" />
-        <TechStack className="col-span-1 md:col-span-4" />
-      </div>
-    </>
+    <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-6 md:auto-rows-[minmax(160px,auto)]">
+      <Header className="md:col-span-6" />
+      <About className="md:col-span-4" />
+      <Experience className="md:col-span-2" />
+      <TechStack className="md:col-span-6" />
+      <Projects className="md:col-span-6 md:row-span-2 mb-15" />
+    </div>
   );
 }
